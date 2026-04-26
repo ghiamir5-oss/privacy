@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialite - Learn Angular</title>
-  <meta name="description" content="Politique de confidentialite de l'application Learn Angular publiee sur Google Play.">
+  <title>Politique de confidentialite - Learn Angular & React</title>
+  <meta name="description" content="Politique de confidentialite de l'application Learn Angular & React publiee pour Google Play.">
   <style>
     :root {
       color-scheme: light;
-      --bg: #f7f8fc;
+      --bg: #f5f7fc;
       --panel: #ffffff;
-      --text: #18202b;
-      --muted: #5f6b7a;
-      --accent: #dd0031;
-      --border: #dde3ec;
-      --shadow: 0 18px 42px rgba(24, 32, 43, 0.08);
+      --text: #17202b;
+      --muted: #5f6c7b;
+      --angular: #dd0031;
+      --react: #147da7;
+      --accent: linear-gradient(135deg, #dd0031 0%, #b81de0 48%, #147da7 100%);
+      --border: #dce4ef;
+      --shadow: 0 22px 50px rgba(23, 32, 43, 0.10);
     }
 
     * {
@@ -25,23 +27,56 @@
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(221, 0, 49, 0.08), transparent 28%),
-        linear-gradient(180deg, #fff7f9 0%, var(--bg) 42%, #eef5ff 100%);
+        radial-gradient(circle at top left, rgba(221, 0, 49, 0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(20, 125, 167, 0.10), transparent 28%),
+        linear-gradient(180deg, #fff8fa 0%, #f6f8fd 44%, #eef6ff 100%);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.68;
     }
 
     .wrap {
-      width: min(920px, calc(100% - 32px));
-      margin: 40px auto;
+      width: min(980px, calc(100% - 32px));
+      margin: 36px auto 48px;
     }
 
     .card {
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 20px;
+      border-radius: 24px;
       box-shadow: var(--shadow);
-      padding: 32px;
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 34px 34px 26px;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255,255,255,0.16), transparent 22%),
+        radial-gradient(circle at 88% 18%, rgba(255,255,255,0.18), transparent 20%),
+        var(--accent);
+      color: #ffffff;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .badge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #ffffff;
+      box-shadow: 18px 0 0 rgba(255,255,255,0.75);
+      margin-right: 18px;
     }
 
     h1, h2 {
@@ -50,15 +85,35 @@
     }
 
     h1 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       margin-bottom: 12px;
     }
 
     h2 {
-      font-size: 1.2rem;
-      margin-top: 28px;
+      font-size: 1.18rem;
+      margin-top: 30px;
       margin-bottom: 10px;
-      color: var(--accent);
+      color: var(--angular);
+    }
+
+    .hero p,
+    .hero .meta {
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .meta {
+      margin: 0 0 14px;
+      font-size: 0.95rem;
+    }
+
+    .lead {
+      margin: 0;
+      font-size: 1.02rem;
+      max-width: 760px;
+    }
+
+    .content {
+      padding: 32px 34px 34px;
     }
 
     p, li {
@@ -66,23 +121,8 @@
       font-size: 1rem;
     }
 
-    .lead, .meta {
+    .muted {
       color: var(--muted);
-    }
-
-    .meta {
-      margin-bottom: 24px;
-      font-size: 0.95rem;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(221, 0, 49, 0.08);
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 16px;
     }
 
     ul {
@@ -90,144 +130,292 @@
       margin-top: 8px;
     }
 
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 20px 0 10px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fbfcff;
+      padding: 16px;
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #101828;
+    }
+
     .note {
       margin-top: 24px;
-      padding: 14px 16px;
-      border-left: 4px solid var(--accent);
+      padding: 16px 18px;
+      border-left: 4px solid var(--react);
+      background: #f2faff;
+      border-radius: 12px;
+    }
+
+    .warning {
+      margin-top: 24px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--angular);
       background: #fff5f7;
-      border-radius: 10px;
+      border-radius: 12px;
     }
 
     a {
-      color: var(--accent);
+      color: var(--react);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      margin-top: 24px;
+      margin-top: 28px;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.93rem;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      background: #f3f5f9;
+      border: 1px solid #e5eaf2;
+      border-radius: 8px;
+      padding: 2px 6px;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(100%, calc(100% - 20px));
+        margin: 16px auto 24px;
+      }
+
+      .hero,
+      .content {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
     }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="card">
-      <div class="badge">Learn Angular</div>
-      <h1>Politique de confidentialite</h1>
-      <p class="meta">Derniere mise a jour : 5 avril 2026</p>
-      <p class="lead">
-        Cette politique de confidentialite explique comment l'application <strong>Learn Angular</strong>
-        traite les informations des utilisateurs. Learn Angular est une application educative qui
-        fonctionne avec une connexion Internet active et affiche des annonces publicitaires via
-        <strong>Google AdMob</strong>.
-      </p>
+      <header class="hero">
+        <div class="badge"><span class="badge-dot" aria-hidden="true"></span>Learn Angular &amp; React</div>
+        <h1>Politique de confidentialite</h1>
+        <p class="meta">Derniere mise a jour : 26 avril 2026</p>
+        <p class="lead">
+          Cette politique de confidentialite explique comment l'application <strong>Learn Angular &amp; React</strong>
+          traite les informations des utilisateurs. L'application est une plateforme educative mobile pour apprendre
+          TypeScript, Angular, React et RxJS. Elle utilise une connexion Internet active et integre notamment
+          <strong>Firebase Authentication</strong>, <strong>Cloud Firestore</strong>, <strong>Google AdMob</strong>,
+          une fonction de traduction sur l'appareil et un playground de compilation embarque.
+        </p>
+      </header>
 
-      <h2>1. Donnees collectees</h2>
-      <p>
-        Learn Angular peut traiter certaines donnees necessaires au fonctionnement de l'application,
-        a l'affichage des annonces et a l'amelioration de la stabilite du service.
-      </p>
-      <ul>
-        <li>Aucun compte utilisateur n'est requis.</li>
-        <li>L'application utilise Internet pour charger ou mettre a disposition ses contenus et services.</li>
-        <li>L'application affiche des annonces via Google AdMob.</li>
-        <li>Des donnees peuvent etre collectees automatiquement par le SDK Google Mobile Ads pour la diffusion d'annonces, l'analyse, la prevention de la fraude et la securite.</li>
-      </ul>
+      <div class="content">
+        <div class="grid">
+          <div class="mini-card">
+            <strong>Nom de l'application</strong>
+            Learn Angular &amp; React
+          </div>
+          <div class="mini-card">
+            <strong>Package Android actuel</strong>
+            <code>com.emyr.learn.angular</code>
+          </div>
+          <div class="mini-card">
+            <strong>Connexion Internet</strong>
+            Requise pour l'authentification, la synchronisation, les annonces et le playground.
+          </div>
+        </div>
 
-      <h2>2. Donnees stockees localement sur l'appareil</h2>
-      <p>
-        L'application peut enregistrer localement sur votre appareil certaines informations techniques
-        minimales necessaires a son fonctionnement, par exemple l'etat d'affichage de l'ecran
-        d'introduction (onboarding). Ces informations restent sur votre appareil et ne sont pas envoyees
-        au developpeur, sauf si une fonction de service tiers le necessite.
-      </p>
+        <h2>1. Services utilises dans l'application</h2>
+        <p>
+          A la date du <strong>26 avril 2026</strong>, le code client de l'application utilise principalement les services suivants :
+        </p>
+        <ul>
+          <li><strong>Firebase Authentication</strong> pour l'inscription, la connexion par email/mot de passe, le maintien de session et la reinitialisation de mot de passe.</li>
+          <li><strong>Cloud Firestore</strong> pour synchroniser l'etat utilisateur, la progression, certaines preferences et des metadonnees de fonctionnement.</li>
+          <li><strong>Google AdMob</strong> pour afficher des annonces de type app open, interstitial et rewarded.</li>
+          <li><strong>Google ML Kit On-Device Translation</strong> pour traduire certaines pages de cours apres telechargement local des modeles linguistiques.</li>
+          <li><strong>Flutter Local Notifications</strong> pour des rappels de pratique locaux et optionnels sur l'appareil.</li>
+          <li><strong>WebView</strong> pour le playground Create, avec chargement de bibliotheques web de compilation et d'execution depuis des CDN externes.</li>
+        </ul>
+        <p class="muted">
+          D'apres le code client actuel, l'application n'integre pas Firebase Analytics ni Firebase Crashlytics a cette date.
+        </p>
 
-      <h2>3. Donnees publicitaires et services tiers</h2>
-      <p>
-        Learn Angular utilise Google AdMob pour afficher des annonces. Dans ce cadre, Google et ses
-        partenaires peuvent traiter certaines donnees, notamment l'adresse IP, les interactions avec
-        l'application et les annonces, les informations de diagnostic, ainsi que des identifiants
-        d'appareil ou publicitaires, conformement a leurs technologies et politiques applicables.
-      </p>
-      <p>
-        Ces donnees peuvent etre utilisees pour la diffusion d'annonces, la mesure de performance,
-        l'analyse, la prevention de la fraude et, lorsque cela est autorise, la personnalisation
-        des annonces.
-      </p>
+        <h2>2. Donnees collectees ou traitees</h2>
+        <p>
+          Selon les fonctions que vous utilisez, l'application peut traiter les categories de donnees suivantes.
+        </p>
+        <ul>
+          <li><strong>Donnees de compte</strong> : nom d'utilisateur, version normalisee du nom d'utilisateur, adresse email, identifiant Firebase (<code>uid</code>).</li>
+          <li><strong>Donnees d'authentification</strong> : email, mot de passe et etat de session via Firebase Authentication. Le mot de passe est traite pour l'authentification par Firebase ; le developpeur n'y accede pas en clair depuis l'application.</li>
+          <li><strong>Donnees de progression</strong> : progression par cours et par chapitre, cours recents, nombre de coeurs, compteur de sessions/lectures demarrees et compteur d'utilisation du playground Create.</li>
+          <li><strong>Donnees de preferences</strong> : langue, mode sombre, activation des notifications locales, etat de l'onboarding, etat du message d'information sur la traduction.</li>
+          <li><strong>Donnees techniques/publicitaires</strong> : adresse IP, identifiants publicitaires ou d'appareil, diagnostics, interactions avec les annonces, version d'application et autres donnees techniques susceptibles d'etre traitees par Google AdMob et des fournisseurs techniques associes.</li>
+          <li><strong>Donnees liees au playground</strong> : lorsque vous utilisez Create, la WebView peut contacter des services externes pour charger TypeScript, Babel, Angular, React, React DOM et d'autres dependances techniques.</li>
+        </ul>
+        <p>
+          L'application ne demande pas l'acces a vos contacts, votre microphone, votre appareil photo, vos SMS ou votre localisation precise dans le manifeste Android actuel.
+        </p>
 
-      <h2>4. Connexion Internet</h2>
-      <p>
-        Learn Angular fonctionne uniquement avec une connexion Internet active. L'acces reseau est
-        necessaire pour le bon fonctionnement de l'application et pour l'affichage des annonces
-        publicitaires fournies par Google AdMob.
-      </p>
+        <h2>3. Donnees enregistrees dans Firebase</h2>
+        <p>
+          Quand vous creez un compte ou vous connectez, un document utilisateur peut etre cree dans la collection <code>users</code>
+          de Cloud Firestore pour memoriser l'etat de l'application et synchroniser votre progression entre les sessions.
+        </p>
+        <ul>
+          <li><code>uid</code>, <code>username</code>, <code>usernameLower</code>, <code>email</code></li>
+          <li><code>preferences.language</code>, <code>preferences.darkMode</code>, <code>preferences.heartsCount</code></li>
+          <li><code>preferences.pushNotificationsEnabled</code>, <code>preferences.recentLessonCourseIds</code></li>
+          <li><code>preferences.startedReaderSessionsCount</code>, <code>preferences.createRunCount</code></li>
+          <li><code>preferences.hasSeenReaderTranslationNotice</code>, <code>preferences.hasSeenOnboarding</code></li>
+          <li><code>preferences.lastAppOpenAdShownAtMillis</code></li>
+          <li><code>progressByCourse</code></li>
+        </ul>
+        <p>
+          Ces donnees servent a restaurer l'experience utilisateur, gerer certaines limitations/fonctionnements de l'app et synchroniser votre progression.
+        </p>
 
-      <h2>5. Partage avec des tiers</h2>
-      <p>
-        Certaines donnees peuvent etre partagees avec Google AdMob et ses partenaires techniques dans
-        le cadre de la diffusion publicitaire, de l'analyse, de la mesure de performance et de la
-        prevention de la fraude, conformement a leurs politiques de confidentialite.
-      </p>
+        <h2>4. Authentification Firebase</h2>
+        <p>
+          L'application propose actuellement une authentification <strong>email/mot de passe</strong>. Elle permet egalement l'envoi d'un email de reinitialisation de mot de passe.
+          Firebase peut conserver l'etat de connexion sur l'appareil afin de restaurer votre session lors des ouvertures suivantes.
+        </p>
+        <p>
+          Si vous choisissez de creer un compte, votre email, votre identifiant utilisateur et votre nom d'utilisateur sont utilises pour vous identifier et associer vos donnees de progression a votre compte.
+        </p>
 
-      <h2>6. Securite</h2>
-      <p>
-        Le developpeur prend des mesures raisonnables pour limiter le traitement des donnees au strict
-        minimum necessaire. Toutefois, aucun systeme n'offre une securite absolue. Si vous choisissez
-        d'installer et d'utiliser l'application, vous le faites sous votre propre responsabilite.
-      </p>
+        <h2>5. Donnees stockees localement sur l'appareil</h2>
+        <p>
+          L'application peut enregistrer localement des informations necessaires a son fonctionnement, par exemple :
+        </p>
+        <ul>
+          <li>la preference d'activation des notifications locales ;</li>
+          <li>des caches et etats techniques de certains SDK Firebase ;</li>
+          <li>des donnees mises en cache pour la lecture/synchronisation ;</li>
+          <li>des modeles linguistiques telecharges pour la traduction sur l'appareil.</li>
+        </ul>
+        <p>
+          La traduction utilise un moteur sur l'appareil. Une fois le modele telecharge, la traduction des contenus se fait localement sur le terminal, mais le premier telechargement du modele necessite Internet.
+        </p>
 
-      <h2>7. Conservation et suppression des donnees</h2>
-      <p>
-        Les preferences stockees localement par l'application restent sur votre appareil jusqu'a leur
-        suppression manuelle, la suppression des donnees de l'application ou sa desinstallation. Les
-        donnees traitees par Google AdMob ou d'autres services Google sont conservees selon les regles
-        et delais definis par Google.
-      </p>
+        <h2>6. Connexion Internet requise</h2>
+        <p>
+          <strong>Learn Angular &amp; React est concue pour fonctionner avec une connexion Internet active.</strong>
+          Internet est notamment requis pour :
+        </p>
+        <ul>
+          <li>l'initialisation Firebase et l'authentification ;</li>
+          <li>la lecture et la synchronisation des donnees Firestore ;</li>
+          <li>l'affichage et la mesure des annonces Google AdMob ;</li>
+          <li>le telechargement initial des modeles de traduction ;</li>
+          <li>le fonctionnement du playground Create, qui charge des bibliotheques depuis des services tels que <code>cdn.jsdelivr.net</code>, <code>unpkg.com</code> et <code>esm.sh</code>.</li>
+        </ul>
 
-      <h2>8. Protection des enfants</h2>
-      <p>
-        Learn Angular est une application educative. Le developpeur ne collecte pas sciemment de donnees
-        personnelles concernant des enfants.
-      </p>
+        <h2>7. Notifications</h2>
+        <p>
+          L'application declare la permission Android <code>POST_NOTIFICATIONS</code> pour vous proposer des rappels de pratique.
+          Cette fonction est <strong>optionnelle</strong>. Les rappels sont des notifications locales programmees sur l'appareil ; il ne s'agit pas, a ce jour, d'un systeme de push via Firebase Cloud Messaging.
+        </p>
 
-      <h2>9. Consentement et choix de l'utilisateur</h2>
-      <p>
-        Lorsque la legislation applicable l'exige, l'application peut afficher un message d'information
-        ou de consentement concernant la confidentialite et la publicite avant la diffusion de certaines
-        annonces. Vous pouvez egalement gerer certains choix lies a la publicite depuis les parametres
-        de votre appareil Android et selon les options proposees par Google.
-      </p>
+        <h2>8. Publicite, consentement et services tiers</h2>
+        <p>
+          L'application utilise <strong>Google AdMob</strong> pour diffuser des annonces. Dans ce cadre, Google et ses partenaires techniques peuvent traiter certaines donnees telles que l'adresse IP, les identifiants d'appareil ou publicitaires, les informations de diagnostic, la langue/appareil, ainsi que les interactions avec les annonces.
+        </p>
+        <p>
+          Lorsque la legislation applicable l'exige, l'application peut afficher un message de confidentialite et de consentement publicitaire via les outils Google de type <strong>Privacy &amp; messaging</strong> avant la diffusion de certaines annonces ou pour permettre un choix utilisateur.
+        </p>
 
-      <h2>10. Modifications de cette politique</h2>
-      <p>
-        Cette politique de confidentialite peut etre mise a jour a tout moment afin de refleter
-        l'evolution de l'application, des obligations legales ou des exigences de Google Play. La date
-        de mise a jour affichee en haut de cette page sera modifiee en consequence.
-      </p>
+        <h2>9. Partage des donnees</h2>
+        <p>
+          Les donnees ne sont pas revendues par le developpeur. Elles peuvent toutefois etre partagees ou rendues accessibles aux fournisseurs techniques strictement necessaires au fonctionnement des fonctions utilisees, notamment :
+        </p>
+        <ul>
+          <li>Google Firebase (Authentication, Firestore) ;</li>
+          <li>Google AdMob et ses partenaires techniques publicitaires ;</li>
+          <li>Google ML Kit pour le telechargement des modeles de traduction ;</li>
+          <li>des fournisseurs CDN/web utilises par la WebView du playground Create.</li>
+        </ul>
 
-      <h2>11. Liens utiles</h2>
-      <p>
-        Pour en savoir plus sur la maniere dont Google utilise certaines donnees dans le cadre de ses
-        services publicitaires, vous pouvez consulter les pages suivantes :
-      </p>
-      <ul>
-        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialite de Google</a></li>
-        <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Comment Google utilise les informations provenant des sites ou applications partenaires</a></li>
-      </ul>
+        <h2>10. Duree de conservation</h2>
+        <p>
+          Les donnees de compte et de progression synchronisees dans Firebase sont conservees tant que le compte et le projet associe restent actifs, sauf obligation legale ou demande valable de suppression traitee par le developpeur et/ou les services tiers concernes.
+        </p>
+        <ul>
+          <li>Les preferences locales restent sur votre appareil jusqu'a effacement des donnees de l'application ou desinstallation.</li>
+          <li>Les modeles de traduction telecharges peuvent rester sur l'appareil jusqu'a leur suppression par l'application, le systeme ou les services ML Kit.</li>
+          <li>Les donnees traitees par Google sont ensuite soumises a leurs propres regles de retention et de securite.</li>
+        </ul>
 
-      <h2>12. Contact</h2>
-      <p>
-        Pour toute question concernant cette politique de confidentialite ou l'application Learn Angular,
-        vous pouvez contacter le developpeur a l'adresse suivante :
-        <strong>ghiamir5@gmail.com</strong>
-      </p>
+        <h2>11. Vos choix et vos droits</h2>
+        <p>
+          Selon votre juridiction, vous pouvez disposer de droits d'acces, de rectification, d'opposition ou de suppression sur certaines donnees personnelles.
+          Dans l'etat actuel de l'application, vous pouvez notamment :
+        </p>
+        <ul>
+          <li>vous deconnecter de l'application ;</li>
+          <li>demander une reinitialisation de mot de passe par email ;</li>
+          <li>desactiver ou refuser les notifications depuis les parametres de l'appareil ;</li>
+          <li>vider les donnees locales de l'application ou la desinstaller ;</li>
+          <li>contacter le developpeur pour toute demande relative a vos donnees.</li>
+        </ul>
+        <div class="note">
+          Pour une demande de suppression de compte ou de donnees synchronisees, contactez le developpeur en precisant l'adresse email du compte concerne. A la date de cette politique, l'application ne propose pas encore un bouton de suppression complete du compte directement dans l'interface.
+        </div>
 
-     
+        <h2>12. Securite</h2>
+        <p>
+          Le developpeur prend des mesures raisonnables pour limiter le traitement des donnees au strict necessaire. Les communications avec les services Google/Firebase s'appuient sur l'infrastructure et les mecanismes de securite de ces services. Toutefois, aucun systeme ne peut garantir une securite absolue.
+        </p>
 
-      <footer>
-        Application : Learn Angular<br>
-        Package Android : com.emyr.learn.angular
-      </footer>
+        <h2>13. Protection des enfants</h2>
+        <p>
+          L'application est une application educative. Le developpeur ne cherche pas a collecter sciemment des donnees personnelles d'enfants en dehors de ce qui est techniquement necessaire au fonctionnement des services integres. Si vous pensez qu'une donnee a ete fournie de maniere inappropriee, contactez le developpeur.
+        </p>
+
+        <h2>14. Modifications de cette politique</h2>
+        <p>
+          Cette politique peut etre mise a jour afin de refleter l'evolution de l'application, des SDK utilises, des obligations legales, des exigences de Google Play ou des changements de configuration Firebase/AdMob. La date de mise a jour figurant en haut de cette page sera modifiee en consequence.
+        </p>
+
+        <h2>15. Liens utiles</h2>
+        <ul>
+          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialite de Google</a></li>
+          <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Comment Google utilise les informations provenant des sites ou applications partenaires</a></li>
+          <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Privacy and Security in Firebase</a></li>
+          <li><a href="https://firebase.google.com/docs/auth/flutter/manage-users" target="_blank" rel="noopener noreferrer">Documentation Firebase Authentication for Flutter</a></li>
+          <li><a href="https://firebase.google.com/docs/firestore" target="_blank" rel="noopener noreferrer">Documentation Cloud Firestore</a></li>
+          <li><a href="https://developers.google.com/ml-kit/language/translation/android" target="_blank" rel="noopener noreferrer">Documentation ML Kit Translation</a></li>
+        </ul>
+
+        <h2>16. Contact</h2>
+        <p>
+          Pour toute question concernant cette politique de confidentialite ou l'application <strong>Learn Angular &amp; React</strong>, vous pouvez contacter le developpeur a l'adresse suivante :
+          <strong>ghiamir5@gmail.com</strong>
+        </p>
+
+        <div class="warning">
+          Cette politique a ete adaptee au comportement observe dans le code actuel de l'application au 26 avril 2026. Si vous ajoutez plus tard de nouveaux SDK, de nouveaux fournisseurs d'identite, des paiements, un backend supplementaire ou d'autres permissions Android/iOS, cette politique devra etre mise a jour.
+        </div>
+
+        <footer>
+          Application : Learn Angular &amp; React<br>
+          Package Android actuel : com.emyr.learn.angular<br>
+          Fonctions principales couvertes : Firebase Authentication, Cloud Firestore, Google AdMob, traduction sur l'appareil, notifications locales, WebView playground.
+        </footer>
+      </div>
     </section>
   </main>
 </body>

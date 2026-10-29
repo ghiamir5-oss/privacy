@@ -1,422 +1,262 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialite - Learn Angular & React</title>
-  <meta name="description" content="Politique de confidentialite de l'application Learn Angular & React publiee pour Google Play.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Politique de confidentialité de Deulingo : données locales, publicités, services externes et contrôle de vos informations.">
+  <meta name="color-scheme" content="light">
+  <title>Politique de confidentialité — Deulingo</title>
   <style>
-    :root {
-      color-scheme: light;
-      --bg: #f5f7fc;
-      --panel: #ffffff;
-      --text: #17202b;
-      --muted: #5f6c7b;
-      --angular: #dd0031;
-      --react: #147da7;
-      --accent: linear-gradient(135deg, #dd0031 0%, #b81de0 48%, #147da7 100%);
-      --border: #dce4ef;
-      --shadow: 0 22px 50px rgba(23, 32, 43, 0.10);
-    }
+:root {
+  color-scheme: light;
+  --ink: #101a32;
+  --muted: #687086;
+  --pink: #ef174c;
+  --paper: #fffcf8;
+  --line: #eee6df;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 28px; }
+body { margin: 0; line-height: 1.75; }
+a { color: #c50b3c; text-underline-offset: 4px; }
+a:hover { color: var(--ink); }
+a:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--pink); outline-offset: 5px; border-radius: 4px; }
+.wrap { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+.skip-link { position: fixed; top: -80px; left: 16px; z-index: 10; padding: 12px 18px; background: white; }
+.skip-link:focus { top: 16px; }
 
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(221, 0, 49, 0.08), transparent 30%),
-        radial-gradient(circle at top right, rgba(20, 125, 167, 0.10), transparent 28%),
-        linear-gradient(180deg, #fff8fa 0%, #f6f8fd 44%, #eef6ff 100%);
-      color: var(--text);
-      line-height: 1.68;
-    }
+.site-header { display: flex; align-items: center; justify-content: space-between; min-height: 110px; border-bottom: 1px solid var(--line); }
+.brand { position: relative; color: var(--ink); font-size: 32px; font-weight: 900; letter-spacing: -1.8px; text-decoration: none; }
+.brand > span:last-child { color: var(--pink); }
+.flag { position: absolute; left: -9px; top: 11px; width: 14px; height: 17px; background: linear-gradient(#152032 33.33%, #e72b40 33.33% 66.66%, #ffcd48 66.66%); border-radius: 4px 2px 4px 2px; transform: rotate(-8deg); }
+.header-label { font-size: 13px; color: var(--muted); }
+.hero { position: relative; padding: 68px 200px 50px 0; }
+.eyebrow { font-size: 11px; font-weight: 750; letter-spacing: 1.8px; }
+.hero .eyebrow { color: #be1744; }
+.eyebrow > span { margin-right: 8px; }
+h1 { margin: 18px 0 22px; font-size: clamp(42px, 5.5vw, 68px); line-height: 1.1; letter-spacing: -2.5px; font-weight: 800; }
+h1 > span { color: var(--pink); }
+.lead { max-width: 650px; font-size: 18px; color: var(--muted); line-height: 1.7; }
+.updated { margin: 24px 0 0; color: var(--muted); font-size: 12px; }
+.hero-icon { position: absolute; right: 12px; top: 104px; width: 145px; height: 164px; transform: rotate(7deg); }
 
-    .wrap {
-      width: min(980px, calc(100% - 32px));
-      margin: 36px auto 48px;
-    }
+.overview { display: grid; grid-template-columns: repeat(3, 1fr); padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); gap: 32px; }
+.overview > div + div { padding-left: 32px; border-left: 1px solid var(--line); }
+.number { display: block; color: #bb1741; font-size: 11px; font-weight: 700; margin-bottom: 6px; }
+.overview strong { font-size: 16px; }
+.overview p { font-size: 13px; line-height: 1.6; color: var(--muted); margin: 5px 0 0; }
 
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
+.document-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 70px; padding: 64px 0 80px; align-items: start; }
+.contents { position: sticky; top: 28px; }
+.contents .eyebrow { color: var(--muted); margin: 0 0 18px; }
+.contents nav a { display: block; padding: 7px 0; color: #515b72; font-size: 13px; line-height: 1.6; text-decoration: none; }
+.contents nav a:hover { color: var(--pink); text-decoration: underline; }
+.sidebar-note { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 22px; font-size: 12px; color: var(--muted); }
+.policy { min-width: 0; font-size: 15px; }
+.policy p { color: #50596e; margin: 0 0 18px; }
+.document-title { margin: 0 0 16px; font-size: 27px; letter-spacing: -.7px; line-height: 1.3; }
+.policy section { padding-top: 34px; margin-top: 34px; border-top: 1px solid var(--line); scroll-margin-top: 28px; }
+.section-heading { display: flex; gap: 14px; align-items: baseline; margin-bottom: 18px; }
+.section-heading > span { flex-shrink: 0; color: #bd1542; font-size: 12px; font-weight: 750; }
+.section-heading h2 { margin: 0; font-size: 23px; font-weight: 750; letter-spacing: -.5px; line-height: 1.4; }
+.policy ul { color: #50596e; padding-left: 22px; margin: 0 0 20px; }
+.policy li { margin: 10px 0; padding-left: 4px; }
+.policy li::marker { color: var(--pink); }
+.policy strong { color: var(--ink); font-weight: 650; }
+.table-scroll { overflow-x: auto; margin: 22px 0; border: 1px solid var(--line); border-radius: 16px; background: white; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
+caption { padding: 15px 18px; text-align: left; color: var(--ink); font-size: 12px; font-weight: 650; }
+th, td { padding: 15px 18px; vertical-align: top; line-height: 1.7; }
+th { color: #8d2543; background: #fff0f2; font-weight: 650; }
+td { border-top: 1px solid var(--line); color: #50596e; }
+td:first-child { width: 45%; color: var(--ink); }
+.callout { background: #fff0f2; border-left: 3px solid var(--pink); border-radius: 0 14px 14px 0; padding: 22px 24px; margin: 24px 0; }
+.callout p { margin: 8px 0 0; font-size: 14px; }
+.contact { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 20px 24px; margin: 22px 0; border: 1px solid var(--line); border-radius: 16px; background: white; font-style: normal; }
+.site-footer { display: flex; justify-content: space-between; gap: 20px; padding: 26px 0 34px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+.site-footer a { font-weight: 600; text-decoration: none; }
 
-    .hero {
-      padding: 34px 34px 26px;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(255,255,255,0.16), transparent 22%),
-        radial-gradient(circle at 88% 18%, rgba(255,255,255,0.18), transparent 20%),
-        var(--accent);
-      color: #ffffff;
-    }
+@media (max-width: 850px) {
+  .document-layout { grid-template-columns: 180px minmax(0, 1fr); gap: 32px; }
+  .hero { padding-right: 155px; }
+  .hero-icon { width: 115px; height: 130px; }
+  .overview { gap: 20px; }
+  .overview > div + div { padding-left: 20px; }
+}
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      margin-bottom: 18px;
-      backdrop-filter: blur(10px);
-    }
+@media (max-width: 640px) {
+  .wrap { width: calc(100% - 40px); }
+  .site-header { min-height: 88px; }
+  .brand { font-size: 29px; }
+  .header-label { max-width: 110px; font-size: 11px; text-align: right; }
+  .hero { padding: 40px 0 32px; }
+  h1 { font-size: clamp(38px, 10vw, 56px); letter-spacing: -1.8px; }
+  .hero-icon { display: none; }
+  .lead { font-size: 16px; }
+  .overview { grid-template-columns: 1fr; gap: 18px; padding: 24px 0; }
+  .overview > div { display: grid; grid-template-columns: 28px 1fr; column-gap: 8px; }
+  .overview > div + div { border-left: 0; padding-left: 0; }
+  .overview .number { grid-row: span 2; margin: 3px 0 0; }
+  .overview p { grid-column: 2; }
+  .document-layout { grid-template-columns: 1fr; gap: 32px; padding: 34px 0 48px; }
+  .contents { position: static; }
+  .contents nav { padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: white; }
+  .contents nav a { padding: 6px 0; }
+  .sidebar-note { display: none; }
+  .document-title { font-size: 25px; }
+  .section-heading h2 { font-size: 21px; }
+  .policy section { margin-top: 26px; padding-top: 26px; }
+  th, td { padding: 12px; }
+  .callout { padding: 18px; }
+  .site-footer { flex-direction: column; gap: 8px; }
+}
 
-    .badge-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: #ffffff;
-      box-shadow: 18px 0 0 rgba(255,255,255,0.75);
-      margin-right: 18px;
-    }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 
-    h1, h2 {
-      line-height: 1.2;
-      margin-top: 0;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: 1.18rem;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      color: var(--angular);
-    }
-
-    .hero p,
-    .hero .meta {
-      color: rgba(255, 255, 255, 0.92);
-    }
-
-    .meta {
-      margin: 0 0 14px;
-      font-size: 0.95rem;
-    }
-
-    .lead {
-      margin: 0;
-      font-size: 1.02rem;
-      max-width: 760px;
-    }
-
-    .content {
-      padding: 32px 34px 34px;
-    }
-
-    p, li {
-      color: var(--text);
-      font-size: 1rem;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    ul {
-      padding-left: 22px;
-      margin-top: 8px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin: 20px 0 10px;
-    }
-
-    .mini-card {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #fbfcff;
-      padding: 16px;
-    }
-
-    .mini-card strong {
-      display: block;
-      margin-bottom: 6px;
-      color: #101828;
-    }
-
-    .note {
-      margin-top: 24px;
-      padding: 16px 18px;
-      border-left: 4px solid var(--react);
-      background: #f2faff;
-      border-radius: 12px;
-    }
-
-    .warning {
-      margin-top: 24px;
-      padding: 16px 18px;
-      border-left: 4px solid var(--angular);
-      background: #fff5f7;
-      border-radius: 12px;
-    }
-
-    a {
-      color: var(--react);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 28px;
-      color: var(--muted);
-      font-size: 0.93rem;
-      border-top: 1px solid var(--border);
-      padding-top: 18px;
-    }
-
-    code {
-      font-family: Consolas, "Courier New", monospace;
-      background: #f3f5f9;
-      border: 1px solid #e5eaf2;
-      border-radius: 8px;
-      padding: 2px 6px;
-      font-size: 0.95em;
-    }
-
-    @media (max-width: 720px) {
-      .wrap {
-        width: min(100%, calc(100% - 20px));
-        margin: 16px auto 24px;
-      }
-
-      .hero,
-      .content {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-    }
+@media print {
+  :root { background: white; }
+  .wrap { width: 100%; }
+  .site-header { min-height: 65px; }
+  .hero { padding: 24px 0; }
+  h1 { font-size: 34px; }
+  .hero-icon, .contents, .overview, .skip-link, .site-footer a { display: none; }
+  .document-layout { display: block; padding: 12px 0; }
+  .policy { font-size: 11pt; }
+  .policy section { margin-top: 20px; padding-top: 20px; }
+  .section-heading { break-after: avoid; }
+  .table-scroll { overflow: visible; }
+  tr, .callout { break-inside: avoid; }
+  a { color: inherit; text-decoration: underline; }
+}
   </style>
 </head>
-<body>
+<body id="haut">
+  <a class="skip-link" href="#politique">Aller à la politique</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#haut" aria-label="Deulingo, haut de page"><span class="flag" aria-hidden="true"></span>Deu<span>lingo</span></a>
+    <span class="header-label">Apprendre en confiance</span>
+  </header>
+
   <main class="wrap">
-    <section class="card">
-      <header class="hero">
-        <div class="badge"><span class="badge-dot" aria-hidden="true"></span>Learn Angular &amp; React</div>
-        <h1>Politique de confidentialite</h1>
-        <p class="meta">Derniere mise a jour : 26 avril 2026</p>
-        <p class="lead">
-          Cette politique de confidentialite explique comment l'application <strong>Learn Angular &amp; React</strong>
-          traite les informations des utilisateurs. L'application est une plateforme educative mobile pour apprendre
-          TypeScript, Angular, React et RxJS. Elle utilise une connexion Internet active et integre notamment
-          <strong>Firebase Authentication</strong>, <strong>Cloud Firestore</strong>, <strong>Google AdMob</strong>,
-          une fonction de traduction sur l'appareil et un playground de compilation embarque.
-        </p>
-      </header>
-
-      <div class="content">
-        <div class="grid">
-          <div class="mini-card">
-            <strong>Nom de l'application</strong>
-            Learn Angular &amp; React
-          </div>
-          <div class="mini-card">
-            <strong>Package Android actuel</strong>
-            <code>com.emyr.learn.angular</code>
-          </div>
-          <div class="mini-card">
-            <strong>Connexion Internet</strong>
-            Requise pour l'authentification, la synchronisation, les annonces et le playground.
-          </div>
-        </div>
-
-        <h2>1. Services utilises dans l'application</h2>
-        <p>
-          A la date du <strong>26 avril 2026</strong>, le code client de l'application utilise principalement les services suivants :
-        </p>
-        <ul>
-          <li><strong>Firebase Authentication</strong> pour l'inscription, la connexion par email/mot de passe, le maintien de session et la reinitialisation de mot de passe.</li>
-          <li><strong>Cloud Firestore</strong> pour synchroniser l'etat utilisateur, la progression, certaines preferences et des metadonnees de fonctionnement.</li>
-          <li><strong>Google AdMob</strong> pour afficher des annonces de type app open, interstitial et rewarded.</li>
-          <li><strong>Google ML Kit On-Device Translation</strong> pour traduire certaines pages de cours apres telechargement local des modeles linguistiques.</li>
-          <li><strong>Flutter Local Notifications</strong> pour des rappels de pratique locaux et optionnels sur l'appareil.</li>
-          <li><strong>WebView</strong> pour le playground Create, avec chargement de bibliotheques web de compilation et d'execution depuis des CDN externes.</li>
-        </ul>
-        <p class="muted">
-          D'apres le code client actuel, l'application n'integre pas Firebase Analytics ni Firebase Crashlytics a cette date.
-        </p>
-
-        <h2>2. Donnees collectees ou traitees</h2>
-        <p>
-          Selon les fonctions que vous utilisez, l'application peut traiter les categories de donnees suivantes.
-        </p>
-        <ul>
-          <li><strong>Donnees de compte</strong> : nom d'utilisateur, version normalisee du nom d'utilisateur, adresse email, identifiant Firebase (<code>uid</code>).</li>
-          <li><strong>Donnees d'authentification</strong> : email, mot de passe et etat de session via Firebase Authentication. Le mot de passe est traite pour l'authentification par Firebase ; le developpeur n'y accede pas en clair depuis l'application.</li>
-          <li><strong>Donnees de progression</strong> : progression par cours et par chapitre, cours recents, nombre de coeurs, compteur de sessions/lectures demarrees et compteur d'utilisation du playground Create.</li>
-          <li><strong>Donnees de preferences</strong> : langue, mode sombre, activation des notifications locales, etat de l'onboarding, etat du message d'information sur la traduction.</li>
-          <li><strong>Donnees techniques/publicitaires</strong> : adresse IP, identifiants publicitaires ou d'appareil, diagnostics, interactions avec les annonces, version d'application et autres donnees techniques susceptibles d'etre traitees par Google AdMob et des fournisseurs techniques associes.</li>
-          <li><strong>Donnees liees au playground</strong> : lorsque vous utilisez Create, la WebView peut contacter des services externes pour charger TypeScript, Babel, Angular, React, React DOM et d'autres dependances techniques.</li>
-        </ul>
-        <p>
-          L'application ne demande pas l'acces a vos contacts, votre microphone, votre appareil photo, vos SMS ou votre localisation precise dans le manifeste Android actuel.
-        </p>
-
-        <h2>3. Donnees enregistrees dans Firebase</h2>
-        <p>
-          Quand vous creez un compte ou vous connectez, un document utilisateur peut etre cree dans la collection <code>users</code>
-          de Cloud Firestore pour memoriser l'etat de l'application et synchroniser votre progression entre les sessions.
-        </p>
-        <ul>
-          <li><code>uid</code>, <code>username</code>, <code>usernameLower</code>, <code>email</code></li>
-          <li><code>preferences.language</code>, <code>preferences.darkMode</code>, <code>preferences.heartsCount</code></li>
-          <li><code>preferences.pushNotificationsEnabled</code>, <code>preferences.recentLessonCourseIds</code></li>
-          <li><code>preferences.startedReaderSessionsCount</code>, <code>preferences.createRunCount</code></li>
-          <li><code>preferences.hasSeenReaderTranslationNotice</code>, <code>preferences.hasSeenOnboarding</code></li>
-          <li><code>preferences.lastAppOpenAdShownAtMillis</code></li>
-          <li><code>progressByCourse</code></li>
-        </ul>
-        <p>
-          Ces donnees servent a restaurer l'experience utilisateur, gerer certaines limitations/fonctionnements de l'app et synchroniser votre progression.
-        </p>
-
-        <h2>4. Authentification Firebase</h2>
-        <p>
-          L'application propose actuellement une authentification <strong>email/mot de passe</strong>. Elle permet egalement l'envoi d'un email de reinitialisation de mot de passe.
-          Firebase peut conserver l'etat de connexion sur l'appareil afin de restaurer votre session lors des ouvertures suivantes.
-        </p>
-        <p>
-          Si vous choisissez de creer un compte, votre email, votre identifiant utilisateur et votre nom d'utilisateur sont utilises pour vous identifier et associer vos donnees de progression a votre compte.
-        </p>
-
-        <h2>5. Donnees stockees localement sur l'appareil</h2>
-        <p>
-          L'application peut enregistrer localement des informations necessaires a son fonctionnement, par exemple :
-        </p>
-        <ul>
-          <li>la preference d'activation des notifications locales ;</li>
-          <li>des caches et etats techniques de certains SDK Firebase ;</li>
-          <li>des donnees mises en cache pour la lecture/synchronisation ;</li>
-          <li>des modeles linguistiques telecharges pour la traduction sur l'appareil.</li>
-        </ul>
-        <p>
-          La traduction utilise un moteur sur l'appareil. Une fois le modele telecharge, la traduction des contenus se fait localement sur le terminal, mais le premier telechargement du modele necessite Internet.
-        </p>
-
-        <h2>6. Connexion Internet requise</h2>
-        <p>
-          <strong>Learn Angular &amp; React est concue pour fonctionner avec une connexion Internet active.</strong>
-          Internet est notamment requis pour :
-        </p>
-        <ul>
-          <li>l'initialisation Firebase et l'authentification ;</li>
-          <li>la lecture et la synchronisation des donnees Firestore ;</li>
-          <li>l'affichage et la mesure des annonces Google AdMob ;</li>
-          <li>le telechargement initial des modeles de traduction ;</li>
-          <li>le fonctionnement du playground Create, qui charge des bibliotheques depuis des services tels que <code>cdn.jsdelivr.net</code>, <code>unpkg.com</code> et <code>esm.sh</code>.</li>
-        </ul>
-
-        <h2>7. Notifications</h2>
-        <p>
-          L'application declare la permission Android <code>POST_NOTIFICATIONS</code> pour vous proposer des rappels de pratique.
-          Cette fonction est <strong>optionnelle</strong>. Les rappels sont des notifications locales programmees sur l'appareil ; il ne s'agit pas, a ce jour, d'un systeme de push via Firebase Cloud Messaging.
-        </p>
-
-        <h2>8. Publicite, consentement et services tiers</h2>
-        <p>
-          L'application utilise <strong>Google AdMob</strong> pour diffuser des annonces. Dans ce cadre, Google et ses partenaires techniques peuvent traiter certaines donnees telles que l'adresse IP, les identifiants d'appareil ou publicitaires, les informations de diagnostic, la langue/appareil, ainsi que les interactions avec les annonces.
-        </p>
-        <p>
-          Lorsque la legislation applicable l'exige, l'application peut afficher un message de confidentialite et de consentement publicitaire via les outils Google de type <strong>Privacy &amp; messaging</strong> avant la diffusion de certaines annonces ou pour permettre un choix utilisateur.
-        </p>
-
-        <h2>9. Partage des donnees</h2>
-        <p>
-          Les donnees ne sont pas revendues par le developpeur. Elles peuvent toutefois etre partagees ou rendues accessibles aux fournisseurs techniques strictement necessaires au fonctionnement des fonctions utilisees, notamment :
-        </p>
-        <ul>
-          <li>Google Firebase (Authentication, Firestore) ;</li>
-          <li>Google AdMob et ses partenaires techniques publicitaires ;</li>
-          <li>Google ML Kit pour le telechargement des modeles de traduction ;</li>
-          <li>des fournisseurs CDN/web utilises par la WebView du playground Create.</li>
-        </ul>
-
-        <h2>10. Duree de conservation</h2>
-        <p>
-          Les donnees de compte et de progression synchronisees dans Firebase sont conservees tant que le compte et le projet associe restent actifs, sauf obligation legale ou demande valable de suppression traitee par le developpeur et/ou les services tiers concernes.
-        </p>
-        <ul>
-          <li>Les preferences locales restent sur votre appareil jusqu'a effacement des donnees de l'application ou desinstallation.</li>
-          <li>Les modeles de traduction telecharges peuvent rester sur l'appareil jusqu'a leur suppression par l'application, le systeme ou les services ML Kit.</li>
-          <li>Les donnees traitees par Google sont ensuite soumises a leurs propres regles de retention et de securite.</li>
-        </ul>
-
-        <h2>11. Vos choix et vos droits</h2>
-        <p>
-          Selon votre juridiction, vous pouvez disposer de droits d'acces, de rectification, d'opposition ou de suppression sur certaines donnees personnelles.
-          Dans l'etat actuel de l'application, vous pouvez notamment :
-        </p>
-        <ul>
-          <li>vous deconnecter de l'application ;</li>
-          <li>demander une reinitialisation de mot de passe par email ;</li>
-          <li>desactiver ou refuser les notifications depuis les parametres de l'appareil ;</li>
-          <li>vider les donnees locales de l'application ou la desinstaller ;</li>
-          <li>contacter le developpeur pour toute demande relative a vos donnees.</li>
-        </ul>
-        <div class="note">
-          Pour une demande de suppression de compte ou de donnees synchronisees, contactez le developpeur en precisant l'adresse email du compte concerne. A la date de cette politique, l'application ne propose pas encore un bouton de suppression complete du compte directement dans l'interface.
-        </div>
-
-        <h2>12. Securite</h2>
-        <p>
-          Le developpeur prend des mesures raisonnables pour limiter le traitement des donnees au strict necessaire. Les communications avec les services Google/Firebase s'appuient sur l'infrastructure et les mecanismes de securite de ces services. Toutefois, aucun systeme ne peut garantir une securite absolue.
-        </p>
-
-        <h2>13. Protection des enfants</h2>
-        <p>
-          L'application est une application educative. Le developpeur ne cherche pas a collecter sciemment des donnees personnelles d'enfants en dehors de ce qui est techniquement necessaire au fonctionnement des services integres. Si vous pensez qu'une donnee a ete fournie de maniere inappropriee, contactez le developpeur.
-        </p>
-
-        <h2>14. Modifications de cette politique</h2>
-        <p>
-          Cette politique peut etre mise a jour afin de refleter l'evolution de l'application, des SDK utilises, des obligations legales, des exigences de Google Play ou des changements de configuration Firebase/AdMob. La date de mise a jour figurant en haut de cette page sera modifiee en consequence.
-        </p>
-
-        <h2>15. Liens utiles</h2>
-        <ul>
-          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialite de Google</a></li>
-          <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Comment Google utilise les informations provenant des sites ou applications partenaires</a></li>
-          <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Privacy and Security in Firebase</a></li>
-          <li><a href="https://firebase.google.com/docs/auth/flutter/manage-users" target="_blank" rel="noopener noreferrer">Documentation Firebase Authentication for Flutter</a></li>
-          <li><a href="https://firebase.google.com/docs/firestore" target="_blank" rel="noopener noreferrer">Documentation Cloud Firestore</a></li>
-          <li><a href="https://developers.google.com/ml-kit/language/translation/android" target="_blank" rel="noopener noreferrer">Documentation ML Kit Translation</a></li>
-        </ul>
-
-        <h2>16. Contact</h2>
-        <p>
-          Pour toute question concernant cette politique de confidentialite ou l'application <strong>Learn Angular &amp; React</strong>, vous pouvez contacter le developpeur a l'adresse suivante :
-          <strong>ghiamir5@gmail.com</strong>
-        </p>
-
-        <div class="warning">
-          Cette politique a ete adaptee au comportement observe dans le code actuel de l'application au 26 avril 2026. Si vous ajoutez plus tard de nouveaux SDK, de nouveaux fournisseurs d'identite, des paiements, un backend supplementaire ou d'autres permissions Android/iOS, cette politique devra etre mise a jour.
-        </div>
-
-        <footer>
-          Application : Learn Angular &amp; React<br>
-          Package Android actuel : com.emyr.learn.angular<br>
-          Fonctions principales couvertes : Firebase Authentication, Cloud Firestore, Google AdMob, traduction sur l'appareil, notifications locales, WebView playground.
-        </footer>
-      </div>
+    <section class="hero" aria-labelledby="titre">
+      <div class="eyebrow"><span aria-hidden="true">●</span> VOTRE CONFIDENTIALITÉ</div>
+      <h1 id="titre">Vos données,<br><span>en toute clarté.</span></h1>
+      <p class="lead">Politique de confidentialité de Deulingo, l’application d’apprentissage de l’allemand également nommée « Deutsch Lernen ».</p>
+      <p class="updated">Dernière mise à jour : <time datetime="2026-10-29">29 octobre 2026</time></p>
+      <svg class="hero-icon" viewBox="0 0 160 180" fill="none" aria-hidden="true"><path d="M80 12 140 35v49c0 40-26 67-60 84-34-17-60-44-60-84V35L80 12Z" fill="#ffe7ed" stroke="#f31a50" stroke-width="5"/><path d="m53 87 19 19 37-40" stroke="#f31a50" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </section>
+
+    <div class="overview" aria-label="Les points essentiels">
+      <div><span class="number">01</span><strong>Sans compte</strong><p>Aucune inscription pour apprendre.</p></div>
+      <div><span class="number">02</span><strong>Apprentissage local</strong><p>Votre progression reste sur votre appareil.</p></div>
+      <div><span class="number">03</span><strong>Publicité expliquée</strong><p>Des services externes peuvent traiter des données.</p></div>
+    </div>
+
+    <div class="document-layout">
+      <aside class="contents">
+        <nav aria-label="Sommaire de la politique">
+          <p class="eyebrow">DANS CETTE PAGE</p>
+          <a href="#donnees">01 · Données utilisées</a>
+          <a href="#publicites">02 · Publicités et consentement</a>
+          <a href="#connexions">03 · Connexions et services tiers</a>
+          <a href="#autorisations">04 · Autorisations</a>
+          <a href="#conservation">05 · Conservation et suppression</a>
+          <a href="#securite">06 · Sécurité</a>
+          <a href="#droits">07 · Vos droits</a>
+          <a href="#contact">08 · Contact et mises à jour</a>
+        </nav>
+        <p class="sidebar-note">Cette politique concerne l’application. Les services tiers disposent de leurs propres règles de confidentialité.</p>
+      </aside>
+
+      <article id="politique" class="policy">
+        <h2 class="document-title">Politique de confidentialité</h2>
+        <p>Cette page explique quelles informations sont utilisées par Deulingo, dans quel but et comment vous pouvez les gérer. L’application propose des cours, des exercices, du vocabulaire, de la traduction et de la prononciation en allemand. Son éditeur est <strong>Emyr</strong>, joignable à <a href="mailto:ghiamir5@gmail.com">ghiamir5@gmail.com</a>.</p>
+
+        <section id="donnees">
+          <div class="section-heading"><span>01</span><h2>Données utilisées dans l’application</h2></div>
+          <p>Deulingo fonctionne sans création de compte. Aucun nom, numéro de téléphone ou adresse e-mail n’est demandé pour accéder aux fonctions d’apprentissage.</p>
+          <div class="table-scroll" role="region" aria-label="Données enregistrées sur votre appareil" tabindex="0">
+            <table>
+              <caption>Informations enregistrées sur votre appareil</caption>
+              <thead><tr><th scope="col">Informations</th><th scope="col">Utilisation</th></tr></thead>
+              <tbody>
+                <tr><td>Progression, réponses, résultats, révisions et cœurs</td><td>Reprendre les cours, calculer les résultats et proposer les révisions.</td></tr>
+                <tr><td>Mots et expressions favoris, historique de prononciation</td><td>Retrouver et réécouter vos contenus. L’historique conserve au plus 100 expressions distinctes.</td></tr>
+                <tr><td>Langue, thème, vitesse de lecture et rappels</td><td>Conserver vos préférences et les horaires choisis.</td></tr>
+                <tr><td>Choix publicitaires et informations de fréquence</td><td>Appliquer vos choix et gérer l’affichage des publicités.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>La traduction s’exécute sur l’appareil avec les modèles disponibles localement. La prononciation utilise un modèle vocal local ou une voix hors ligne du système. Ces fonctions n’envoient pas vos textes à une API de traduction ou de synthèse vocale distante.</p>
+          <p>Les données pédagogiques ne sont pas synchronisées avec un compte ou un serveur de l’éditeur. Si vous exportez une sauvegarde, le fichier contient notamment votre progression, vos favoris, votre historique et les réponses enregistrées ; vous choisissez son emplacement et contrôlez son partage.</p>
+        </section>
+
+        <section id="publicites">
+          <div class="section-heading"><span>02</span><h2>Publicités et consentement</h2></div>
+          <p>L’application intègre Google AdMob. Les publicités peuvent inclure des bannières, des annonces en plein écran et des vidéos récompensées, notamment pour récupérer un cœur.</p>
+          <p>Selon la configuration et vos choix, le SDK publicitaire de Google peut traiter l’adresse IP, des identifiants de l’appareil ou publicitaires, des interactions avec l’application et les annonces, ainsi que des informations de diagnostic. Ces traitements servent à diffuser et mesurer les publicités, analyser leur fonctionnement et prévenir la fraude. L’adresse IP peut permettre d’estimer une zone géographique générale.</p>
+          <div class="callout"><strong>Vous pouvez modifier vos choix.</strong><p>Lorsque requis, un formulaire de consentement Google est présenté. L’option « Confidentialité des publicités » dans les paramètres permet de revoir vos choix lorsqu’elle est disponible. Vous pouvez aussi gérer l’identifiant publicitaire dans les réglages Android.</p></div>
+          <p>Le consentement est demandé lorsqu’il est nécessaire. La diffusion d’annonces limitées ou non personnalisées peut néanmoins nécessiter certains traitements techniques. Consultez les <a href="https://policies.google.com/privacy?hl=fr">règles de confidentialité Google</a> et la <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure?hl=fr">documentation sur les données du SDK AdMob</a>.</p>
+        </section>
+
+        <section id="connexions">
+          <div class="section-heading"><span>03</span><h2>Connexions et services tiers</h2></div>
+          <p>Certaines fonctions nécessitent une connexion Internet :</p>
+          <ul>
+            <li><strong>Publicités :</strong> les requêtes sont traitées par Google et les services publicitaires associés.</li>
+            <li><strong>Modèles de langue et de voix :</strong> les téléchargements demandés depuis l’application proviennent de Hugging Face. Les serveurs de téléchargement reçoivent les informations techniques d’une connexion, dont l’adresse IP. Le texte à traduire n’est pas joint à ces téléchargements. Consultez la <a href="https://huggingface.co/privacy">politique de Hugging Face</a>.</li>
+            <li><strong>Vérification de connexion :</strong> l’application contacte des adresses de test de Google et Cloudflare pour vérifier l’accès à Internet. Ces requêtes ne contiennent pas vos réponses ou votre progression ; leurs serveurs reçoivent les informations techniques de connexion. Consultez les politiques de <a href="https://policies.google.com/privacy?hl=fr">Google</a> et de <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>.</li>
+          </ul>
+          <p>Ces prestataires peuvent traiter des données dans d’autres pays. Leurs règles précisent les lieux de traitement, les garanties applicables et leurs durées de conservation.</p>
+        </section>
+
+        <section id="autorisations">
+          <div class="section-heading"><span>04</span><h2>Autorisations et rappels</h2></div>
+          <p>L’accès à Internet permet les fonctions décrites ci-dessus. Si vous activez les rappels, l’application peut demander l’autorisation d’afficher des notifications et, selon Android, de programmer des alarmes précises. Les horaires sont conservés localement ; les rappels peuvent être reprogrammés après le redémarrage de l’appareil.</p>
+          <p>Vous pouvez désactiver les rappels dans l’application ou les notifications dans les réglages du téléphone. L’import et l’export utilisent le sélecteur de fichiers du système pour les fichiers que vous choisissez. Les fonctions actuelles ne demandent pas l’accès au microphone, à la caméra, aux contacts ou à la localisation précise.</p>
+        </section>
+
+        <section id="conservation">
+          <div class="section-heading"><span>05</span><h2>Conservation et suppression</h2></div>
+          <p>Les données locales sont conservées jusqu’à leur suppression par les fonctions disponibles, l’effacement des données de l’application ou sa désinstallation. Vous gardez les moyens suivants :</p>
+          <ul>
+            <li><strong>Effacer l’historique</strong> depuis les paramètres pour supprimer les expressions enregistrées.</li>
+            <li><strong>Réinitialiser la progression</strong> pour supprimer les résultats, les tentatives et les révisions. Cette action conserve les favoris et les préférences.</li>
+            <li><strong>Retirer des favoris</strong> les mots et expressions que vous ne souhaitez plus conserver.</li>
+            <li><strong>Effacer toutes les données locales</strong> dans les réglages Android de l’application, ou désinstaller l’application.</li>
+          </ul>
+          <p>Les sauvegardes exportées restent à l’emplacement que vous avez choisi : supprimez-les séparément, y compris leurs copies éventuelles. La suppression des données locales n’efface pas automatiquement celles déjà traitées par des services tiers ; leurs propres procédures s’appliquent.</p>
+        </section>
+
+        <section id="securite">
+          <div class="section-heading"><span>06</span><h2>Sécurité des informations</h2></div>
+          <p>Les données d’apprentissage sont enregistrées dans l’espace de stockage de l’application sur l’appareil. Les téléchargements de modèles et les vérifications de connexion utilisent HTTPS. Google indique que les données collectées par son SDK publicitaire sont chiffrées en transit.</p>
+          <p>Aucun dispositif ne garantit une sécurité absolue. Protégez l’accès à votre appareil et à vos fichiers de sauvegarde. Une sauvegarde exportée n’est pas chiffrée par l’application.</p>
+        </section>
+
+        <section id="droits">
+          <div class="section-heading"><span>07</span><h2>Vos choix et vos droits</h2></div>
+          <p>Selon la législation applicable, vous pouvez disposer de droits d’accès, de rectification, d’effacement, de portabilité, de limitation ou d’opposition, et du droit de retirer un consentement. Vous pouvez également contacter l’autorité de protection des données compétente.</p>
+          <p>Pour les informations conservées uniquement sur votre téléphone, utilisez les outils de gestion, de sauvegarde et de suppression de l’application. Pour les données traitées par Google ou d’autres prestataires, leurs pages de confidentialité indiquent les démarches disponibles. L’éditeur ne dispose pas d’une copie de votre base d’apprentissage locale.</p>
+          <p>Les parents ou représentants légaux peuvent accompagner un utilisateur mineur dans la gestion des autorisations et des choix publicitaires. L’application ne comporte ni profil public ni messagerie entre utilisateurs.</p>
+        </section>
+
+        <section id="contact">
+          <div class="section-heading"><span>08</span><h2>Contact et mises à jour</h2></div>
+          <p>Pour toute question concernant cette politique, vos données ou l’exercice de vos droits, contactez l’éditeur de Deulingo :</p>
+          <address class="contact"><strong>Emyr</strong><a href="mailto:ghiamir5@gmail.com">ghiamir5@gmail.com</a></address>
+          <p>Cette politique peut évoluer avec les fonctionnalités ou les services utilisés. La date figurant en haut de cette page indique la dernière mise à jour.</p>
+        </section>
+      </article>
+    </div>
   </main>
+
+  <footer class="site-footer wrap"><span>Deulingo · Politique de confidentialité</span><a href="#haut">Retour en haut <span aria-hidden="true">↑</span></a></footer>
 </body>
 </html>
